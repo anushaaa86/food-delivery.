@@ -1,0 +1,44 @@
+# Swagger Documentation
+
+## Usage
+
+1. Start the server locally and open the following URL in your browser:
+   - URL: [http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
+
+## Endpoints
+
+### POST /api/v1/fooddeliveryapp/calculate-cost
+
+This endpoint calculates the total price based on the distance beyond the base distance and the item type.
+
+#### Request
+
+- Method: POST
+- Path: /api/v1/fooddeliveryapp/calculate-cost
+
+#### Parameters
+
+- `zone` (string, required): The delivery zone.
+- `organization_id` (integer, required): The ID of the organization.
+- `total_distance` (integer, required): The total distance for delivery in kilometers.
+- `item_type` (string, required): The type of item ('perishable' or 'non-perishable').
+
+#### Response
+
+- Status: 200 OK
+- Body: JSON object containing the `total_price` for the delivery.
+
+### GET /api/v1/fooddeliveryapp/
+
+This endpoint retrieves all the price details.
+
+#### Request
+
+- Method: GET
+- Path: /api/v1/fooddeliveryapp/
+
+#### Response
+
+- Status: 200 OK
+- Body: JSON array containing all the price details.
+
